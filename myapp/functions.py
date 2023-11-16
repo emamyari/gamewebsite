@@ -11,3 +11,8 @@ def page2(request):
     data={'user':'emamyari'}
     a=render(request,'page2.html',context=data)
     return a
+
+def page3(request):
+    data={'user':'Heydari'}
+    a=render(request,'page2.html',context=data)
+    return a
