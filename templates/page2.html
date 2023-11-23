@@ -5,21 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello {{ user }}</h1>
 
-<table >
-    <thead >
-        <th>name</th>
-        <th>family</th>
-        <th>tel</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>ali</td>
-            <td>rezaei</td>
-            <td>091222222</td>
-        </tr>
-    </tbody>
-</table>
+{% for item in user %}
+    <h4>Hello {{ item }}</h4>
+{% endfor %}
+
 </body>
 </html>
