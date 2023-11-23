@@ -10,5 +10,25 @@
     <h4>Hello {{ item }}</h4>
 {% endfor %}
 
+
+<table style="width: 100%;border: 2px solid black">
+    <thead style="background-color: green;color: white">
+        <th>Name</th>
+        <th>Family</th>
+        <th>Tel</th>
+    </thead>
+    <tbody>
+ {% for item in user %}
+    <tr>
+        <td>{{ item }}</td>
+        <td>{{ item }}</td>
+        <td>{{ item }}</td>
+    </tr>
+ {% endfor %}
+    </tbody>
+</table>
+
+
+
 </body>
 </html>
