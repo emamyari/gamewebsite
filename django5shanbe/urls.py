@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from myapp.functions import  page2
+from myapp.functions import page2, products
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('table/', page2),
+    path('products/', products),
 ]
