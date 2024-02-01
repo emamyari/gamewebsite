@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table class="table table-dark">
+    <thead>
+    <th>نام کالا</th>
+    <th>رنگ</th>
+    <th>قیمت</th>
+    <th>تعداد کالا</th>
+    <th>شرکت سازنده</th>
+    <th>وزن</th>
+    </thead>
+    <tbody>
+    {% for item in data %}
+        <tr>
+            <td>{{ item.0 }}</td>
+            <td>{{ item.1 }}</td>
+            <td>{{ item.2 }}</td>
+            <td>{{ item.3 }}</td>
+            <td>{{ item.4 }}</td>
+            <td>{{ item.5 }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

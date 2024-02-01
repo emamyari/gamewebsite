@@ -1,8 +1,10 @@
 import json
 
+import pyodbc
 import requests
 from django.shortcuts import render
 import http.client
+from rest_framework.decorators import api_view
 
 
 def page2(request):
@@ -18,3 +20,39 @@ def products(request):
 
     a=render(request,'products.html',context=d)
     return a
+
+def daf(request):
+    connection = pyodbc.connect(
+        'DRIVER={ODBC DRIVER 17 FOR SQL SERVER};Server=192.168.1.56;Database=emamyari;Port=1433;UID=sa;PWD=111')
+    cursor=connection.cursor()
+    cursor.execute("select * from digi")
+    data=cursor.fetchall()
+
+    return render(request,'persons.html',{'data':data})
+
+def Amin (request):
+    connection = pyodbc.connect(
+        'DRIVER={ODBC DRIVER 17 FOR SQL SERVER};Server=192.168.1.56;Database=Mono0_0;Port=1433;UID=sa;PWD=111')
+    cursor=connection.cursor()
+    cursor.execute("select * from pro")
+    data=cursor.fetchall()
+
+    return render(request,'prds.html',{'data':data})
+def Karname(request):
+    connection = pyodbc.connect(
+        'DRIVER={ODBC DRIVER 17 FOR SQL SERVER};Server=192.168.1.56;Database=Mono0_0;Port=1433;UID=sa;PWD=111')
+    cursor=connection.cursor()
+    cursor.execute("select * from PayanTahsili")
+    data=cursor.fetchall()
+
+    return render(request,'Karname.html',{'data':data})
+
+@api_view(['GET','POST'])
+def register(request):
+    if request.method=='POST':
+        print(request.data['name'])
+        print(request.data['price'])
+        print(request.data['color'])
+        print(request.data['weight'])
+        print(request.data['madein'])
+    return render(request,'register.html')
